@@ -1,0 +1,110 @@
+
+body {
+	min-height: 100vh;
+	background: rgb(37, 39, 41);
+	background: radial-gradient(
+		circle,
+		rgb(186, 190, 187) 0%,
+		rgb(15, 56, 29) 100%,
+		rgb(3, 37, 5) 100%
+	);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.container {
+	height: -10vh;
+	width: 100vw;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+
+	position: relative;
+	perspective: 1000px;
+	transition: 0.5s;
+}
+
+.summit {
+	
+	width: 11vw;
+	height: 20vh;
+	margin-top: 3vh;
+	margin-bottom: -1vh;
+
+	font-size: 4vw;
+	display: grid;
+	place-items: center;
+
+	position: relative;
+	transform-style: preserve-3d;
+	transition: 0.5s;
+	transform: skewY(10deg);
+	z-index: 9;
+	box-shadow: 20px 30px 30px 0 #1b1f24;
+
+	animation: 1s animate linear infinite;
+}
+
+.summit::before {
+	content: "";
+	position: absolute;
+	background: #ece9eb;
+	transition: 0.5s;
+
+	top: -2px;
+	left: 0px;
+	width: 100%;
+	height: 5px;
+	transform-origin: bottom;
+	transform: skewX(-45deg);
+	border-radius: 10px 0px 0 0;
+}
+
+.summit::after {
+	content: "";
+	position: absolute;
+	background: #b5bbd9;
+	transition: 0.5s;
+
+	right: -5px;
+	top: -5px;
+	width: 5px;
+	height: 100%;
+	transform-origin: right;
+	transform: skewY(-45deg);
+	border-radius: 0 0 10px 0;
+}
+
+.clip:hover .summit {
+	transform: skewY(10deg) translateY(-40px);
+	box-shadow: 10px 5px 20px 0 #23b654;
+	animation: none;
+}
+
+.front {
+	backface-visibility: hidden;
+}
+
+
+
+
+
+.shadow {
+	background: #7c7e7ca4;
+	width: 12vw;
+	height: 12vw;
+	border-radius: 50%;
+	margin-top: -50px;
+
+	position: relative;
+	transform-style: preserve-3d;
+	transition: 0.5s;
+	transform: rotatex(60deg);
+	box-shadow: -2px 5px 1px 1px #21d311, 0 3px 0 1px #2cc50d;
+}
+
+
+
+
